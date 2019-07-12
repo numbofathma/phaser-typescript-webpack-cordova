@@ -1,0 +1,10 @@
+.DS_Store
+*.db
+www/*
+node_modules/
+.idea/
+package-lock.json
+plugins/*
+.gitkeep
+platforms/*
+hooks/*
