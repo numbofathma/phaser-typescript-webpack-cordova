@@ -19,7 +19,7 @@
       "node_modules/phaser-ce/typescript/pixi.d.ts",
       "node_modules/phaser-ce/typescript/p2.d.ts"
     ],
-    "outDir": "dist"
+    "outDir": "www"
   },
   "include": [
     "src/**/*.ts"
@@ -27,9 +27,15 @@
   "exclude": [
     "node_modules",
     "src/**/*.spec.ts",
-    "src/**/__tests__/*.ts"
+    "src/**/__tests__/*.ts",
+    "www",
+    "plugins",
+    "platforms"
   ],
+  "removeComments": true,
   "compileOnSave": false,
+  "noImplicitAny": true,
+  "allowJs": true,
   "atom": {
     "rewriteTsconfig": false
   }
