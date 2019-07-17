@@ -12,6 +12,7 @@
     <plugin name="cordova-plugin-splashscreen" spec="1" />
     <plugin name="cordova-plugin-fullscreen" spec="1" />
     <preference name="Fullscreen" value="true" />
+    <preference name="orientation" value="portrait" />
     <access origin="*" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
