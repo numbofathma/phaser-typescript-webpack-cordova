@@ -18,7 +18,6 @@
     <plugin name="cordova-plugin-fullscreen" spec="1" />
     <preference name="FullScreen" value="true" />
     <preference name="Orientation" value="portrait" />
-    <preference name="android-minSdkVersion" value="26" />
     <preference name="DisallowOverscroll" value="true" />
     <access origin="*" />
     <allow-intent href="http://*/*" />
@@ -28,6 +27,8 @@
     <allow-intent href="mailto:*" />
     <allow-intent href="geo:*" />
     <platform name="android">
+        <preference name="android-targetSdkVersion" value="26" />
+        <preference name="android-minSdkVersion" value="21" />
         <allow-intent href="market:*" />
         <icon density="ldpi" src="res/icon/android/ldpi.png" />
         <icon density="mdpi" src="res/icon/android/mdpi.png" />
