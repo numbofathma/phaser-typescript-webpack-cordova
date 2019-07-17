@@ -44,11 +44,10 @@ window.onload = () => {
 const isCordovaApp = !!window.cordova;
 const cordovaApp = {
     // Application Constructor
-    initialize: function() {
+    initialize: function () {
         if (isCordovaApp) {
             this.bindEvents();
-        }
-        else {
+        } else {
             this.onDeviceReady();
         }
     },
@@ -56,14 +55,18 @@ const cordovaApp = {
     //
     // Bind any events that are required on startup. Common events are:
     // 'load', 'deviceready', 'offline', and 'online'.
-    bindEvents: function() {
+    bindEvents: function () {
         document.addEventListener('deviceready', this.onDeviceReady, false);
+        document.addEventListener('backbutton', () => {
+            // @ts-ignore
+            navigator.app.exitApp();
+        });
     },
     // deviceready Event Handler
     //
     // The scope of 'this' is the event. In order to call the 'receivedEvent'
     // function, we must explicitly call 'app.receivedEvent(...);'
-    onDeviceReady: function() {
+    onDeviceReady: function () {
         new Template();
     },
 };
