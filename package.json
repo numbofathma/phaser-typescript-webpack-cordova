@@ -12,7 +12,9 @@
     "build:ios:debug": "cordova build ios --verbose",
     "build:android:debug": "cordova build android --verbose",
     "emulate:ios": "cordova emulate ios",
-    "emulate:android": "cordova build android"
+    "emulate:android": "cordova emulate android",
+    "device:ios": "cordova run ios --device",
+    "device:android": "cordova run android --device"
   },
   "repository": {
     "type": "git",
