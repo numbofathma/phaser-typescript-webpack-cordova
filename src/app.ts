@@ -20,26 +20,6 @@ class Template extends Phaser.Game {
     }
 }
 
-const resize = () => {
-    const canvas = document.querySelector('canvas');
-    const windowWidth = window.innerWidth;
-    const windowHeight = window.innerHeight;
-    const windowRatio = windowWidth / windowHeight;
-    const gameRatio = Config.gameWidth / Config.gameHeight;
-    if (windowRatio < gameRatio) {
-        canvas.style.width = windowWidth + 'px';
-        canvas.style.height = windowWidth / gameRatio + 'px';
-    } else {
-        canvas.style.width = windowHeight * gameRatio + 'px';
-        canvas.style.height = windowHeight + 'px';
-    }
-};
-
-window.onload = () => {
-    resize();
-    window.addEventListener('resize', resize, false);
-};
-
 // @ts-ignore
 const isCordovaApp = !!window.cordova;
 const cordovaApp = {
