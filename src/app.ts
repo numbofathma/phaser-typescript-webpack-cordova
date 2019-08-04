@@ -28,7 +28,7 @@ const cordovaApp = {
         if (isCordovaApp) {
             this.bindEvents();
         } else {
-            this.onDeviceReady();
+            this.bootGame();
         }
     },
     // Bind Event Listeners
@@ -39,7 +39,17 @@ const cordovaApp = {
         document.addEventListener('deviceready', this.onDeviceReady.bind(this), false);
         document.addEventListener('backbutton', () => {
             // @ts-ignore
-            navigator.app.exitApp();
+            navigator.notification.confirm(
+                'Are you sure you want to quit?',
+                (buttonIndex: number) => {
+                    if (buttonIndex === 1) {
+                        // @ts-ignore
+                        navigator.app.exitApp();
+                    }
+                },
+                'Quit Game?',
+                ['Yes', 'No']
+            );
         });
     },
     // deviceready Event Handler
@@ -47,7 +57,10 @@ const cordovaApp = {
     // The scope of 'this' is the event. In order to call the 'receivedEvent'
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady() {
-        // Do some plugin initialization
+        // @ts-ignore
+        StatusBar.hide(); // Statusbar is hiding
+        // @ts-ignore
+        window.open = cordova.InAppBrowser.open;
         this.bootGame();
     },
     bootGame() {

@@ -10,11 +10,16 @@ export class Game extends Phaser.State {
     public create(): void {
         this.game.physics.startSystem(Phaser.Physics.ARCADE);
 
-        this.text = this.game.add.bitmapText(this.game.world.centerX, this.game.world.centerY + 100, 'font', 'Press Arrows / Space', 15);
+        this.text = this.game.add.bitmapText(this.game.world.centerX, this.game.world.centerY + 100, 'font', 'Press Arrows / Space / Drag', 15);
         this.text.x = this.text.x - ~~(this.text.width * 0.5);
 
         this.mushroom = new Mushroom(this.state.getCurrentState().game, this.game.world.centerX, this.game.world.centerY);
         this.game.add.existing(this.mushroom);
+        //  Input Enable the sprites
+        this.mushroom.inputEnabled = true;
+
+        //  Allow dragging - the 'true' parameter will make the sprite snap to the center
+        this.mushroom.input.enableDrag(true);
 
         this.cursors = this.game.input.keyboard.createCursorKeys();
 

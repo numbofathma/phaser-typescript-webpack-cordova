@@ -17,12 +17,14 @@
       "node_modules/@types",
       "node_modules/phaser-ce/typescript/phaser.d.ts",
       "node_modules/phaser-ce/typescript/pixi.d.ts",
-      "node_modules/phaser-ce/typescript/p2.d.ts"
+      "node_modules/phaser-ce/typescript/p2.d.ts",
+      "plugins/cordova-plugin-inappbrowser/types/index.d.ts",
+      "plugins/cordova-plugin-statusbar/types/index.d.ts"
     ],
     "outDir": "www"
   },
   "include": [
-    "src/**/*.ts"
+    "src/**/*.ts",
   ],
   "exclude": [
     "node_modules",

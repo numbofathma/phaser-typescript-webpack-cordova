@@ -9,16 +9,14 @@
     <description>
         A sample Apache Cordova application that responds to the deviceready event.
     </description>
-    <author email="dev@cordova.apache.org" href="http://cordova.io">
-        Apache Cordova Team
+    <author email="support@roninmobile.eu" href="https://roninmobile.eu">
+        Ronin Mobile Team
     </author>
     <content src="index.html" />
-    <plugin name="cordova-plugin-whitelist" spec="1" />
-    <plugin name="cordova-plugin-splashscreen" spec="1" />
-    <plugin name="cordova-plugin-fullscreen" spec="1" />
     <preference name="FullScreen" value="true" />
     <preference name="Orientation" value="portrait" />
     <preference name="DisallowOverscroll" value="true" />
+    <preference name="StatusBarOverlaysWebView" value="true" />
     <access origin="*" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
@@ -36,7 +34,6 @@
         <icon density="xhdpi" src="res/icon/android/xhdpi.png" />
         <icon density="xxhdpi" src="res/icon/android/xxhdpi.png" />
         <icon density="xxxhdpi" src="res/icon/android/xxxhdpi.png" />
-
         <splash density="port-hdpi" src="res/screen/android/splash-port-hdpi.png" />
         <splash density="port-ldpi" src="res/screen/android/splash-port-ldpi.png" />
         <splash density="port-mdpi" src="res/screen/android/splash-port-mdpi.png" />
@@ -49,7 +46,14 @@
         <allow-intent href="itms-apps:*" />
         <icon height="180" src="res/icon/ios/icon-60@3x.png" width="180" />
         <icon height="60" src="res/icon/ios/icon-60.png" width="60" />
+        <icon height="20" src="res/icon/ios/icon-20.png" width="20" />
+        <icon height="24" src="res/icon/ios/icon-24.png" width="24" />
         <icon height="120" src="res/icon/ios/icon-60@2x.png" width="120" />
+        <icon height="48" src="res/icon/ios/icon-24@2x.png" width="48" />
+        <icon height="55" src="res/icon/ios/icon-27.5@2x.png" width="55" />
+        <icon height="88" src="res/icon/ios/icon-44@2x.png" width="88" />
+        <icon height="172" src="res/icon/ios/icon-86@2x.png" width="172" />
+        <icon height="196" src="res/icon/ios/icon-98@2x.png" width="196" />
         <icon height="76" src="res/icon/ios/icon-76.png" width="76" />
         <icon height="152" src="res/icon/ios/icon-76@2x.png" width="152" />
         <icon height="40" src="res/icon/ios/icon-40.png" width="40" />
@@ -60,13 +64,13 @@
         <icon height="72" src="res/icon/ios/icon-72.png" width="72" />
         <icon height="144" src="res/icon/ios/icon-72@2x.png" width="144" />
         <icon height="167" src="res/icon/ios/icon-167.png" width="167" />
+        <icon height="1024" src="res/icon/ios/icon-1024.png" width="1024" />
         <icon height="29" src="res/icon/ios/icon-small.png" width="29" />
         <icon height="58" src="res/icon/ios/icon-small@2x.png" width="58" />
         <icon height="87" src="res/icon/ios/icon-small@3x.png" width="87" />
         <icon height="50" src="res/icon/ios/icon-50.png" width="50" />
         <icon height="100" src="res/icon/ios/icon-50@2x.png" width="100" />
         <icon height="167" src="res/icon/ios/icon-83.5@2x.png" width="167" />
-
         <splash src="res/screen/ios/Default@2x~iphone~anyany.png" />
         <splash src="res/screen/ios/Default@2x~iphone~comany.png" />
         <splash src="res/screen/ios/Default@3x~iphone~anyany.png" />
@@ -74,4 +78,10 @@
         <splash src="res/screen/ios/Default@2x~ipad~anyany.png" />
         <splash src="res/screen/ios/Default@2x~ipad~comany.png" />
     </platform>
+    <plugin name="cordova-plugin-whitelist" spec="^1.3.3" />
+    <plugin name="cordova-plugin-splashscreen" spec="^5.0.3" />
+    <plugin name="cordova-plugin-fullscreen" spec="^1.2.0" />
+    <plugin name="cordova-plugin-inappbrowser" spec="^3.1.0" />
+    <plugin name="cordova-plugin-splashscreen" spec="^5.0.3" />
+    <plugin name="cordova-plugin-statusbar" spec="^2.4.3" />
 </widget>

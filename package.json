@@ -47,9 +47,12 @@
   "dependencies": {
     "@types/howler": "^2.1.0",
     "cordova-android": "^8.0.0",
-    "cordova-ios": "^5.0.1",
+    "cordova-ios": "^5.0.0",
+    "cordova-plugin-dialogs": "^2.0.2",
     "cordova-plugin-fullscreen": "^1.2.0",
+    "cordova-plugin-inappbrowser": "^3.1.0",
     "cordova-plugin-splashscreen": "^5.0.3",
+    "cordova-plugin-statusbar": "^2.4.3",
     "howler": "^2.1.2",
     "phaser-ce": "^2.12.0"
   },
@@ -57,11 +60,14 @@
     "plugins": {
       "cordova-plugin-whitelist": {},
       "cordova-plugin-splashscreen": {},
-      "cordova-plugin-fullscreen": {}
+      "cordova-plugin-fullscreen": {},
+      "cordova-plugin-inappbrowser": {},
+      "cordova-plugin-dialogs": {},
+      "cordova-plugin-statusbar": {}
     },
     "platforms": [
-      "ios",
-      "android"
+      "android",
+      "ios"
     ]
   }
 }
