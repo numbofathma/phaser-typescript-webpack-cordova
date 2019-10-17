@@ -25,7 +25,7 @@
     <allow-intent href="mailto:*" />
     <allow-intent href="geo:*" />
     <platform name="android">
-        <preference name="android-targetSdkVersion" value="26" />
+        <preference name="android-targetSdkVersion" value="28" />
         <preference name="android-minSdkVersion" value="21" />
         <allow-intent href="market:*" />
         <icon density="ldpi" src="res/icon/android/ldpi.png" />
