@@ -42,12 +42,13 @@ This will optimize and minimize the compiled bundle. Your code will be minified 
 The vendor library will only be minified because uglify will add extra MBs to your game.
 
 
-## 6. Extra feature (fix your TS code)
-I've also added a command that auto-fixes your TS code according to the rules in the tslint.json file.
-
+## 6. Extra feature (check your TS code)
 Run:
 
+``` npm run lint```
 ``` npm run lint:fix```
+``` npm run check-types```
+
 
 ## 7. Cordova
 Check the <a href='https://cordova.apache.org/docs/en/latest/'>Cordova documentation</a> for adding platforms (android, ios, etc) and plugins.
