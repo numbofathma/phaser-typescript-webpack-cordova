@@ -1,3 +1,7 @@
-dist
+www
 node_modules
 assets
+res
+plugins
+platforms
+hooks
