@@ -5,3 +5,6 @@ res
 plugins
 platforms
 hooks
+webpack.*
+babel.*
+types

@@ -25,29 +25,30 @@
     "target": "es5",
     "typeRoots": [
       "node_modules/@types",
-      "node_modules/phaser-ce/typescript/phaser.d.ts",
-      "node_modules/phaser-ce/typescript/pixi.d.ts",
-      "node_modules/phaser-ce/typescript/p2.d.ts",
-      "plugins/cordova-plugin-inappbrowser/types/index.d.ts",
-      "plugins/cordova-plugin-statusbar/types/index.d.ts"
+      "node_modules/phaser-ce/typescript",
     ],
     "outDir": "www"
   },
   "include": [
-    "src/**/*.ts"
+    "src/**/*",
+    "types/**/*",
+    "test/**/*",
+    "plugins/**/*",
   ],
   "exclude": [
     "node_modules",
     "src/**/*.spec.ts",
     "src/**/__tests__/*.ts",
     "www",
-    "plugins",
     "platforms"
   ],
   "removeComments": true,
   "compileOnSave": false,
   "noImplicitAny": true,
-  "atom": {
-    "rewriteTsconfig": false
-  }
+  "files": [
+    "./node_modules/cordova-plugin-inappbrowser/types/index.d.ts",
+    "./node_modules/cordova-plugin-statusbar/types/index.d.ts",
+    "./node_modules/cordova-plugin-splashscreen/types/index.d.ts",
+    "./node_modules/cordova-plugin-dialogs/types/index.d.ts",
+  ]
 }
