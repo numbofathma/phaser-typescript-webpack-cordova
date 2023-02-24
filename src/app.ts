@@ -1,35 +1,34 @@
-/* eslint-disable no-console */
-/* eslint-disable import/no-extraneous-dependencies */
-import 'pixi';
-import 'p2';
 import Phaser from 'phaser-ce';
-
 import { Config } from './config';
-
 import { Boot } from './states/boot';
 import { Preload } from './states/preload';
 import { Game } from './states/game';
 
 class Template extends Phaser.Game {
   constructor() {
-    super(Config.gameWidth, Config.gameHeight, Phaser.CANVAS, 'content', null);
+    const config = {
+      width: Config.gameWidth,
+      height: Config.gameHeight,
+      renderer: Config.renderer,
+      parent: 'content',
+      state: null,
+      enableDebug: Config.enableDebug,
+    };
+
+    super(config);
 
     this.state.add('Boot', Boot, false);
     this.state.add('Preload', Preload, false);
     this.state.add('Game', Game, false);
-
-    this.state.start('Boot');
   }
 }
 
-// @ts-ignore
 const isCordovaApp = !!window.cordova;
-console.log(isCordovaApp);
+
 const cordovaApp = {
   // Application Constructor
   initialize() {
     if (isCordovaApp) {
-      console.log('bindEvents');
       this.bindEvents();
     } else {
       this.bootGame();
@@ -42,12 +41,10 @@ const cordovaApp = {
   bindEvents() {
     document.addEventListener('deviceready', this.onDeviceReady.bind(this), false);
     document.addEventListener('backbutton', () => {
-      // @ts-ignore
       navigator.notification.confirm(
         'Are you sure you want to quit?',
         (buttonIndex: number) => {
           if (buttonIndex === 1) {
-            // @ts-ignore
             navigator.app.exitApp();
           }
         },
@@ -61,19 +58,15 @@ const cordovaApp = {
   // The scope of 'this' is the event. In order to call the 'receivedEvent'
   // function, we must explicitly call 'app.receivedEvent(...);'
   onDeviceReady() {
-    // @ts-ignore
-    // eslint-disable-next-line no-undef
-    StatusBar.hide(); // Hide status bar
-    // @ts-ignore
-    // eslint-disable-next-line no-undef
-    window.open = cordova.InAppBrowser.open;
-    // Use window.open('https://www.google.com', '_blank', 'usewkwebview=yes') to use the new WKWebView Engine
+    // Hide status bar
+    window.StatusBar.hide();
+    // Use in app browser to navigate to an URL
+    window.cordova.InAppBrowser.open('https://costinmirica.com', '_blank');
     this.bootGame();
   },
   bootGame() {
-    console.log('bootGame');
-    // eslint-disable-next-line no-new
-    new Template();
+    const template = new Template();
+    template.state.start('Boot');
   },
 };
 
