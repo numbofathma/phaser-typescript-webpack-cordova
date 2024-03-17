@@ -8,3 +8,5 @@ plugins/*
 .gitkeep
 platforms/*
 hooks/*
+.vscode
+dist/

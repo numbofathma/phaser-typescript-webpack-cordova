@@ -1,6 +1,6 @@
 import Phaser from 'phaser-ce';
-import { Sound } from '../helpers/sound';
-import { Mushroom } from '../prefabs/mushroom';
+import { GameTemplate } from '~/global';
+import { Mushroom } from '~prefabs/mushroom';
 
 export class Game extends Phaser.State {
   private mushroom: Mushroom;
@@ -12,6 +12,8 @@ export class Game extends Phaser.State {
   private spaceKey: Phaser.Key;
 
   public create(): void {
+    // Play music
+    GameTemplate.Sound.playMusic();
     this.game.physics.startSystem(Phaser.Physics.ARCADE);
 
     this.text = this.game.add.bitmapText(this.game.world.centerX, this.game.world.centerY + 100, 'font', 'Press Arrows / Space / Drag', 15);
@@ -29,7 +31,7 @@ export class Game extends Phaser.State {
 
     this.spaceKey = this.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR);
     this.spaceKey.onDown.add(() => {
-      Sound.play();
+      GameTemplate.Sound.playSound('button');
       this.mushroom.x = this.game.world.centerX;
       this.mushroom.y = this.game.world.centerY;
     }, this);

@@ -1,23 +1,37 @@
 import { Howl } from 'howler';
 
-const createHowler: any = (
-  src: string[],
-  preload: boolean = false,
-) => {
-  const sound: any = new Howl({
-    src,
-    preload,
-    volume: 1,
-    onload: () => {
-      sound.loaded = true;
-    },
-  });
+export default class SoundHelper {
+  private music: Howl;
 
-  return sound;
-};
+  private audiosprite: Howl;
 
-export const Sound: any = createHowler([
-  'assets/sounds/button.m4a',
-  'assets/sounds/button.mp3',
-  'assets/sounds/button.ogg',
-]);
+  private volume: number;
+
+  constructor(music: Howl, audiosprite: Howl, volume: number) {
+    this.music = music;
+    this.audiosprite = audiosprite;
+    this.volume = volume;
+  }
+
+  public setVolume = (volume: number): void => {
+    this.volume = volume;
+  };
+
+  public playMusic = (): void => {
+    if ((this.volume === 1) && (!this.music.playing())) {
+      this.music.play();
+    }
+  };
+
+  public stopMusic = (): void => {
+    if (this.volume === 1) {
+      this.music.stop();
+    }
+  };
+
+  public playSound = (key: string) => {
+    if (this.volume === 1) {
+      this.audiosprite.play(key);
+    }
+  };
+}

@@ -1,46 +1,70 @@
 {
   "compilerOptions": {
+    "target": "es5",
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
     "strict": true,
     "allowSyntheticDefaultImports": true,
     "declaration": false,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "strictPropertyInitialization": false,
-    "allowJs": true,
+    // "allowJs": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
     "noEmit": false,
     "esModuleInterop": true,
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "lib": [
-      "dom",
-      "es2015",
-      "es2016",
-      "esnext"
-    ],
     "module": "esnext",
     "moduleResolution": "node",
     "sourceMap": false,
-    "target": "es5",
     "typeRoots": [
       "node_modules/@types",
       "node_modules/phaser-ce/typescript",
     ],
-    "outDir": "www"
+    "baseUrl": "./",
+    "rootDir": "./",
+    "outDir": "www",
+    "paths": {
+      "~/*": [
+        "src/*",
+      ],
+      "~config/*": [
+        "src/config/*",
+      ],
+      "~helpers/*": [
+        "src/helpers/*"
+      ],
+      "~states/*": [
+        "src/states/*"
+      ],
+      "~prefabs/*": [
+        "src/prefabs/*"
+      ],
+      "~plugins/*": [
+        "src/plugins/*"
+      ],
+      "~interfaces/*": [
+        "src/interfaces/*"
+      ],
+    },
   },
   "include": [
-    "src/**/*",
+    "**/*.ts",
     "types/**/*",
     "test/**/*",
-    "plugins/**/*",
   ],
   "exclude": [
     "node_modules",
     "src/**/*.spec.ts",
     "src/**/__tests__/*.ts",
+    "plugins/**/*",
+    "platforms/**/*",
     "www",
-    "platforms"
   ],
   "removeComments": true,
   "compileOnSave": false,
@@ -48,7 +72,6 @@
   "files": [
     "./node_modules/cordova-plugin-inappbrowser/types/index.d.ts",
     "./node_modules/cordova-plugin-statusbar/types/index.d.ts",
-    "./node_modules/cordova-plugin-splashscreen/types/index.d.ts",
     "./node_modules/cordova-plugin-dialogs/types/index.d.ts",
   ]
 }
